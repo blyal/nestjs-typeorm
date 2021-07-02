@@ -21,6 +21,9 @@ export class Movie {
   // @Column()
   // director: string;
 
+  // @Column()
+  // director: Director;
+
   //first try
   // @OneToOne(() => Director, (director) => director.name)
   // director: string;

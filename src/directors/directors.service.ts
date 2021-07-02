@@ -41,7 +41,7 @@ export class DirectorsService {
       name: directorDto.name,
       birthYear: directorDto.birthYear,
       bestFilm: directorDto.bestFilm,
-      // movie: directorDto.movie,
+      movie: directorDto.movie,
     });
     await this.repo.save(newDirector);
     return newDirector;

@@ -23,14 +23,14 @@ export class Director {
   @Column({ nullable: true })
   bestFilm: string;
 
-  // @Column({ nullable: true })
-  // movie: string;
+  @Column({ nullable: true })
+  movie: string;
 
   // first try
   // @OneToOne(() => Movie, (movie) => movie.director)
   // @JoinColumn()
   // movie: Movie;
 
-  @OneToOne(() => Movie, (movie) => movie.director)
-  movie: Movie;
+  // @OneToOne(() => Movie, (movie) => movie.director)
+  // movie: Movie;
 }
