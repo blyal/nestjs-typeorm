@@ -15,7 +15,7 @@ export class Movie {
   @Column({ unique: true })
   title: string;
 
-  @Column()
+  @Column({ nullable: true })
   year: number;
 
   // @Column()

@@ -13,7 +13,7 @@ export class MoviesService {
 
   async getAll(): Promise<Movie[]> {
     return await this.repo.find({
-      relations: ['directors'],
+      // relations: ['directors'],
     });
   }
 
@@ -34,6 +34,7 @@ export class MoviesService {
     const newMovie = this.repo.create({
       title: movieDto.title,
       year: movieDto.year,
+      // director: movieDto.director,
     });
     await this.repo.save(newMovie);
     return newMovie;

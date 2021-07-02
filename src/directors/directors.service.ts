@@ -16,8 +16,7 @@ export class DirectorsService {
 
   async getAll(): Promise<Director[]> {
     return await this.repo.find({
-      relations: ['movies'],
-      //or relations movie ?
+      // relations: ['movies'],
     });
   }
 
@@ -33,16 +32,16 @@ export class DirectorsService {
   async create(directorDto: DirectorDto): Promise<Director> {
     // const director: Director = directorDto;
 
-    const newMovie: Movie = await this.moviesService.create({
-      title: directorDto.movie,
-    });
-    await this.repo.save(newMovie);
+    // const newMovie: Movie = await this.moviesService.create({
+    //   title: directorDto.movie,
+    // });
+    // await this.repo.save(newMovie);
 
     const newDirector = this.repo.create({
       name: directorDto.name,
       birthYear: directorDto.birthYear,
       bestFilm: directorDto.bestFilm,
-      movie: newMovie,
+      // movie: directorDto.movie,
     });
     await this.repo.save(newDirector);
     return newDirector;
