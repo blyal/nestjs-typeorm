@@ -3,15 +3,12 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Director } from './models/director.entity';
 import { DirectorDto } from './models/director.dto';
-import { Movie } from 'src/movies/models/movie.entity';
-import { MoviesService } from 'src/movies/movies.service';
 
 @Injectable()
 export class DirectorsService {
   constructor(
     @InjectRepository(Director)
-    private repo: Repository<Director>,
-    private moviesService: MoviesService,
+    private repo: Repository<Director>, // private moviesService: MoviesService,
   ) {}
 
   async getAll(): Promise<Director[]> {

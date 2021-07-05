@@ -1,17 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { DirectorsService } from 'src/directors/directors.service';
 import { Repository } from 'typeorm';
 import { Movie } from './models/movie.entity';
 import { MovieDto } from './models/movies.dto';
-import { DirectorsService } from 'src/directors/directors.service';
-import { Director } from 'src/directors/models/director.entity';
 
 @Injectable()
 export class MoviesService {
   constructor(
     @InjectRepository(Movie)
     private repo: Repository<Movie>,
-    @InjectRepository(Director)
     private directorsService: DirectorsService,
   ) {}
 
